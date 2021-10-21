@@ -10,8 +10,53 @@
 					"sid": 603359505915142
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"type": "comment",
+					"text": "you can write a command here"
+				},
+				{
+					"id": "move-to-position",
+					"objectClass": "cloud",
+					"sid": 246044897963283,
+					"behaviorType": "MoveTo",
+					"parameters": {
+						"x": "cloud.X+3000",
+						"y": "cloud.y",
+						"mode": "direct"
+					}
+				}
+			],
 			"sid": 735593848349064
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "cloud",
+					"sid": 802412718442550,
+					"parameters": {
+						"comparison": 4,
+						"x-co-ordinate": "4000"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "cloud",
+					"sid": 424813348569890,
+					"parameters": {
+						"x": "-300"
+					}
+				}
+			],
+			"sid": 460379406081608
+		},
+		{
+			"eventType": "comment",
+			"text": ""
 		}
 	],
 	"sid": 802623804289949

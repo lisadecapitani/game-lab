@@ -26,9 +26,9 @@
 	"uniqueId": "dbgg7a0197z",
 	"objectTypes": {
 		"items": [
-			"Sprite",
-			"Sprite2",
-			"Sprite3"
+			"grass",
+			"flower",
+			"cloud"
 		],
 		"subfolders": []
 	},
@@ -194,7 +194,7 @@
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https"
 	},
-	"viewportWidth": 3840,
-	"viewportHeight": 2160,
+	"viewportWidth": 3000,
+	"viewportHeight": 2000,
 	"firstLayout": null
 }
