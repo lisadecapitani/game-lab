@@ -35,7 +35,8 @@
 	"objectTypes": {
 		"items": [
 			"Universe",
-			"Sun"
+			"Sun",
+			"Stroke"
 		],
 		"subfolders": []
 	},
