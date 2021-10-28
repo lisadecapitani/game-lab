@@ -6,7 +6,7 @@
 			"overriden": 0,
 			"instances": [
 				{
-					"type": "universe",
+					"type": "Universe",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -47,7 +47,7 @@
 					}
 				},
 				{
-					"type": "sun",
+					"type": "Sun",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -58,28 +58,24 @@
 					"uid": 3,
 					"instanceVariables": {},
 					"behaviors": {
-						"Bullet": {
+						"Orbit": {
 							"properties": {
-								"speed": 200,
+								"speed": 30,
 								"acceleration": 0,
-								"gravity": 0,
-								"bounce-off-solids": false,
-								"set-angle": false,
-								"step": false,
-								"enabled": false
-							}
-						},
-						"Tween": {
-							"properties": {
-								"enabled": true
+								"primary-axis": 0,
+								"secondary-axis": 0,
+								"offset-angle": 0,
+								"match-rotation": true,
+								"enabled": true,
+								"live-preview": false
 							}
 						}
 					},
 					"world": {
-						"x": 1900,
-						"y": 1036,
-						"width": 6000,
-						"height": 3375,
+						"x": 2705,
+						"y": 804,
+						"width": 591,
+						"height": 592,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -93,7 +89,7 @@
 					}
 				},
 				{
-					"type": "Sprite",
+					"type": "Sun",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -106,106 +102,22 @@
 					"behaviors": {
 						"Orbit": {
 							"properties": {
-								"speed": 180,
+								"speed": 100,
 								"acceleration": 0,
-								"primary-axis": 300,
-								"secondary-axis": 100,
-								"offset-angle": 4,
-								"match-rotation": true,
-								"enabled": true,
-								"live-preview": true
-							}
-						}
-					},
-					"world": {
-						"x": 3214,
-						"y": 523,
-						"width": 4059.785434943302,
-						"height": 2283.6293071556074,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "sun2",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 5,
-					"instanceVariables": {},
-					"behaviors": {
-						"Orbit": {
-							"properties": {
-								"speed": 200,
-								"acceleration": 0,
-								"primary-axis": 100,
-								"secondary-axis": 100,
+								"primary-axis": 700,
+								"secondary-axis": 500,
 								"offset-angle": 0,
 								"match-rotation": true,
 								"enabled": true,
-								"live-preview": true
+								"live-preview": false
 							}
 						}
 					},
 					"world": {
-						"x": 2645,
-						"y": 734,
-						"width": 3125.254581752899,
-						"height": 1757.9557022360057,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "sun3",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 6,
-					"instanceVariables": {},
-					"behaviors": {
-						"Orbit": {
-							"properties": {
-								"speed": 150,
-								"acceleration": 0,
-								"primary-axis": 100,
-								"secondary-axis": 100,
-								"offset-angle": 0,
-								"match-rotation": true,
-								"enabled": true,
-								"live-preview": true
-							}
-						}
-					},
-					"world": {
-						"x": 2323,
-						"y": 893,
-						"width": 1130.1350374962412,
-						"height": 635.7009585916355,
+						"x": 2696,
+						"y": 801,
+						"width": 395.0537479728331,
+						"height": 395.72219763099355,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [

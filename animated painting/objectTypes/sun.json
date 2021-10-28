@@ -1,19 +1,14 @@
 {
-	"name": "sun",
+	"name": "Sun",
 	"plugin-id": "Sprite",
 	"sid": 704879255866924,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Bullet",
-			"name": "Bullet",
-			"sid": 454699952139844
-		},
-		{
-			"behaviorId": "Tween",
-			"name": "Tween",
-			"sid": 723250586045272
+			"behaviorId": "Orbit",
+			"name": "Orbit",
+			"sid": 344167411072606
 		}
 	],
 	"effectTypes": [],
@@ -22,22 +17,22 @@
 			{
 				"frames": [
 					{
-						"width": 6000,
-						"height": 3375,
+						"width": 591,
+						"height": 592,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 734196,
+						"imageSpriteId": 5073013,
 						"collisionPoly": {
 							"points": [
-								0.6365,
-								0.5,
-								0.675,
-								0.4222222222222222,
-								0.6168333333333333,
-								0.5
+								0.5803722504230111,
+								0.9619932432432432,
+								0.9712351945854492,
+								0.518581081081081,
+								0.38071065989847713,
+								0.9619932432432432
 							]
 						},
 						"useCollisionPoly": true,
