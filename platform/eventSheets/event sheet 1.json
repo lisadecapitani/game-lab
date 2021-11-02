@@ -152,9 +152,26 @@
 		},
 		{
 			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 935232112188647
+			"conditions": [
+				{
+					"id": "is-jumping",
+					"objectClass": "hero",
+					"sid": 603269286411591,
+					"behaviorType": "Platform"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-jump-sustain",
+					"objectClass": "hero",
+					"sid": 886747087651994,
+					"behaviorType": "Platform",
+					"parameters": {
+						"jump-sustain": "5"
+					}
+				}
+			],
+			"sid": 641419319741264
 		}
 	],
 	"sid": 380211515947051
