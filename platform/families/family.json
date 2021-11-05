@@ -1,0 +1,17 @@
+{
+	"name": "Family",
+	"plugin-id": "Sprite",
+	"sid": 331924918110973,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 151282432540202
+		}
+	],
+	"effectTypes": [],
+	"members": [
+		"hero"
+	]
+}

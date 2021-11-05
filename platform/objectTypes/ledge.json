@@ -6,9 +6,9 @@
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 356584242745919
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 823532928260042
 		}
 	],
 	"effectTypes": [],
