@@ -1,0 +1,82 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 915728090766574
+				}
+			],
+			"actions": [
+				{
+					"id": "set-radius",
+					"objectClass": "Stroke",
+					"sid": 334037545182802,
+					"behaviorType": "Orbit",
+					"parameters": {
+						"primary": "Stroke.Orbit.PrimaryRadius - 3",
+						"secondary": "Stroke.Orbit.SecondaryRadius - 3"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Stroke",
+					"sid": 602028506736019,
+					"parameters": {
+						"scale": "Stroke.Orbit.PrimaryRadius / 1500"
+					}
+				}
+			],
+			"sid": 402200560198577
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 467667643921785,
+					"parameters": {
+						"object": "Stroke"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 988375925691047,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 803144268606581,
+							"parameters": {
+								"first-value": "Stroke.Orbit.PrimaryRadius",
+								"comparison": 2,
+								"second-value": "50"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-radius",
+							"objectClass": "Stroke",
+							"sid": 522676653101531,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"primary": "3000",
+								"secondary": "3000"
+							}
+						}
+					],
+					"sid": 658205625841140
+				}
+			]
+		}
+	],
+	"sid": 677795246774711
+}
