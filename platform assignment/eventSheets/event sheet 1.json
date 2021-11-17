@@ -1,0 +1,549 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "STROKES",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 633812187973538
+						}
+					],
+					"actions": [
+						{
+							"id": "set-radius",
+							"objectClass": "Stroke",
+							"sid": 955105970603416,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"primary": "Stroke.Orbit.PrimaryRadius - 3",
+								"secondary": "Stroke.Orbit.SecondaryRadius - 3"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Stroke",
+							"sid": 247897751244344,
+							"parameters": {
+								"scale": "Stroke.Orbit.PrimaryRadius / 1500"
+							}
+						}
+					],
+					"sid": 116910023593576
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 396344261617252,
+							"parameters": {
+								"object": "Stroke"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 966958141620261,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 977800962611340,
+									"parameters": {
+										"first-value": "Stroke.Orbit.PrimaryRadius",
+										"comparison": 2,
+										"second-value": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-radius",
+									"objectClass": "Stroke",
+									"sid": 257084641766245,
+									"behaviorType": "Orbit",
+									"parameters": {
+										"primary": "3000",
+										"secondary": "3000"
+									}
+								}
+							],
+							"sid": 236946572764357
+						}
+					]
+				}
+			],
+			"sid": 711932804692911
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MAIN CHARACTER",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 699805945706648,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "MainCharacter",
+							"sid": 419928521404496,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 191937270744902
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 736412276086048,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "MainCharacter",
+							"sid": 637419027808754,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 485562278878972
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "MainCharacter",
+							"sid": 412721086229973,
+							"parameters": {
+								"object": "Stroke"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "MainCharacter",
+							"sid": 961515492335570
+						}
+					],
+					"sid": 465604242686467
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "MainCharacter",
+							"sid": 388875495151841
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 892970710096144,
+							"parameters": {
+								"object-to-create": "MainCharacter",
+								"layer": "0",
+								"x": "393",
+								"y": "271",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 447937906979466
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Sun",
+							"sid": 679353116054322,
+							"parameters": {
+								"object": "MainCharacter"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "Fade",
+							"sid": 267192557343932,
+							"parameters": {
+								"opacity": "0"
+							}
+						}
+					],
+					"sid": 665146381132732
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Death",
+							"sid": 339670208669264,
+							"parameters": {
+								"object": "MainCharacter"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "MainCharacter",
+							"sid": 904707036141449
+						}
+					],
+					"sid": 622652997816424
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "AI_Boundaries",
+							"sid": 382671601971886,
+							"parameters": {
+								"object": "MainCharacter"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "AI_Boundaries",
+							"sid": 794486959464482,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 257711527879587
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-moved",
+							"objectClass": "MainCharacter",
+							"sid": 160473062196362,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "MainCharacter",
+							"sid": 356022288561903,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 574648056385461
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fall",
+							"objectClass": "MainCharacter",
+							"sid": 823657618669086,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "MainCharacter",
+							"sid": 952412790422100,
+							"parameters": {
+								"animation": "\"fall\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 697346654628976,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "MainCharacter",
+									"sid": 669513545802797,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "MainCharacter",
+									"sid": 949250714647588,
+									"parameters": {
+										"animation": "\"idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 522071985592367
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-jump",
+							"objectClass": "MainCharacter",
+							"sid": 967475495305126,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "MainCharacter",
+							"sid": 194098469990004,
+							"parameters": {
+								"animation": "\"jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 424524897048101
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-stopped",
+							"objectClass": "MainCharacter",
+							"sid": 673008564928178,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "MainCharacter",
+							"sid": 654678449674178,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 620625656874811
+				}
+			],
+			"sid": 958460961683927
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "AI",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "AI",
+							"sid": 970252923912283,
+							"parameters": {
+								"object": "AI_Boundaries"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "AI_Boundaries",
+							"sid": 274102201455726,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 706140044836663,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 449311694680034,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 793290032625507,
+									"parameters": {
+										"instance-variable": "state",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 122874588533287
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 338527747759548
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 239393959404394,
+									"parameters": {
+										"instance-variable": "state",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 947709811660500,
+									"parameters": {
+										"instance-variable": "state",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 877587907562923
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "AI",
+							"sid": 828211017630989,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "AI",
+							"sid": 912266017987836,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "AI",
+							"sid": 108206198111806,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 765079190638350
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "AI",
+							"sid": 125550608771541,
+							"parameters": {
+								"instance-variable": "state",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "AI",
+							"sid": 194680608374245,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "AI",
+							"sid": 276027735856087,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 955433338344129
+				}
+			],
+			"sid": 491099199088014
+		}
+	],
+	"sid": 677795246774711
+}

@@ -1,0 +1,60 @@
+{
+	"name": "Platform",
+	"plugin-id": "Sprite",
+	"sid": 660093516760914,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 639627292816776
+		},
+		{
+			"behaviorId": "jumpthru",
+			"name": "Jumpthru",
+			"sid": 453618750265044
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 2175,
+						"height": 1211,
+						"originX": 1.281998348472337,
+						"originY": 0.415632183908046,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9491402,
+						"collisionPoly": {
+							"points": [
+								0.05461815541444823,
+								0.07652710546048247,
+								0.5056431940924666,
+								0.44416086496388374,
+								0.9564815994665741,
+								0.6444590831648584,
+								0.8810960591132996,
+								0.9947493699991464
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 103307196172187,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
