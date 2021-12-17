@@ -83,6 +83,30 @@
 							"sid": 236946572764357
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-layer",
+							"objectClass": "Stroke",
+							"sid": 616133534724648,
+							"parameters": {
+								"layer": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Stroke",
+							"sid": 429744200584974,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 198378346914788
 				}
 			],
 			"sid": 711932804692911
@@ -90,7 +114,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "MAIN CHARACTER",
+			"title": "MAIN CHARACTER AND KEY",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -176,7 +200,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 892970710096144,
+							"sid": 246953620957381,
 							"parameters": {
 								"object-to-create": "MainCharacter",
 								"layer": "0",
@@ -202,11 +226,11 @@
 					],
 					"actions": [
 						{
-							"id": "set-opacity",
-							"objectClass": "Fade",
-							"sid": 267192557343932,
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 480980842921868,
 							"parameters": {
-								"opacity": "0"
+								"layout": "Layout 2"
 							}
 						}
 					],
@@ -238,25 +262,33 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "AI_Boundaries",
-							"sid": 382671601971886,
+							"objectClass": "Death",
+							"sid": 687948745789633,
 							"parameters": {
-								"object": "MainCharacter"
+								"object": "AI"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-enabled",
-							"objectClass": "AI_Boundaries",
-							"sid": 794486959464482,
-							"behaviorType": "Solid",
+							"id": "destroy",
+							"objectClass": "AI",
+							"sid": 936575207929448
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 444749234655291,
 							"parameters": {
-								"state": "disabled"
+								"object-to-create": "AI",
+								"layer": "0",
+								"x": "713",
+								"y": "793",
+								"create-hierarchy": false
 							}
 						}
 					],
-					"sid": 257711527879587
+					"sid": 953872090998296
 				},
 				{
 					"eventType": "block",
@@ -374,100 +406,59 @@
 						}
 					],
 					"sid": 620625656874811
-				}
-			],
-			"sid": 958460961683927
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "AI",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "AI",
-							"sid": 970252923912283,
+							"objectClass": "MainCharacter",
+							"sid": 406024062785656,
 							"parameters": {
-								"object": "AI_Boundaries"
+								"object": "AI"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-enabled",
-							"objectClass": "AI_Boundaries",
-							"sid": 274102201455726,
-							"behaviorType": "Solid",
+							"id": "add-child",
+							"objectClass": "MainCharacter",
+							"sid": 222902476959958,
 							"parameters": {
-								"state": "enabled"
+								"child": "AI",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": false,
+								"transform-h": false,
+								"transform-a": false,
+								"transform-z-elevation": false,
+								"destroy-with-parent": false
 							}
 						}
 					],
-					"sid": 706140044836663,
+					"sid": 795590757168070,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
+									"id": "has-parent",
 									"objectClass": "AI",
-									"sid": 449311694680034,
-									"parameters": {
-										"instance-variable": "state",
-										"comparison": 0,
-										"value": "\"left\""
-									}
+									"sid": 200867833368580
 								}
 							],
 							"actions": [
 								{
-									"id": "set-instvar-value",
+									"id": "set-position",
 									"objectClass": "AI",
-									"sid": 793290032625507,
+									"sid": 706109935007943,
 									"parameters": {
-										"instance-variable": "state",
-										"value": "\"right\""
+										"x": "MainCharacter.X+300",
+										"y": "MainCharacter.Y"
 									}
 								}
 							],
-							"sid": 122874588533287
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 338527747759548
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "AI",
-									"sid": 239393959404394,
-									"parameters": {
-										"instance-variable": "state",
-										"comparison": 0,
-										"value": "\"right\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "AI",
-									"sid": 947709811660500,
-									"parameters": {
-										"instance-variable": "state",
-										"value": "\"left\""
-									}
-								}
-							],
-							"sid": 877587907562923
+							"sid": 390137486012336
 						}
 					]
 				},
@@ -475,74 +466,55 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
+							"id": "on-collision-with-another-object",
 							"objectClass": "AI",
-							"sid": 828211017630989,
+							"sid": 247394575068683,
 							"parameters": {
-								"instance-variable": "state",
-								"comparison": 0,
-								"value": "\"left\""
+								"object": "Gate"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "simulate-control",
-							"objectClass": "AI",
-							"sid": 912266017987836,
-							"behaviorType": "Platform",
-							"parameters": {
-								"control": "left"
-							}
+							"id": "destroy",
+							"objectClass": "Gate",
+							"sid": 994351613295919
 						},
 						{
-							"id": "set-mirrored",
+							"id": "destroy",
 							"objectClass": "AI",
-							"sid": 108206198111806,
-							"parameters": {
-								"state": "mirrored"
-							}
+							"sid": 363439861823043
 						}
 					],
-					"sid": 765079190638350
+					"sid": 819314390585430
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "AI",
-							"sid": 125550608771541,
+							"id": "on-collision-with-another-object",
+							"objectClass": "MainCharacter",
+							"sid": 762694518876119,
 							"parameters": {
-								"instance-variable": "state",
-								"comparison": 0,
-								"value": "\"right\""
+								"object": "AI"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "simulate-control",
+							"id": "set-enabled",
 							"objectClass": "AI",
-							"sid": 194680608374245,
-							"behaviorType": "Platform",
+							"sid": 354570707599556,
+							"behaviorType": "Physics",
 							"parameters": {
-								"control": "right"
-							}
-						},
-						{
-							"id": "set-mirrored",
-							"objectClass": "AI",
-							"sid": 276027735856087,
-							"parameters": {
-								"state": "not-mirrored"
+								"mode": "disabled"
 							}
 						}
 					],
-					"sid": 955433338344129
+					"sid": 389550739782867
 				}
 			],
-			"sid": 491099199088014
+			"sid": 958460961683927
 		}
 	],
 	"sid": 677795246774711

@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 26800,
+	"savedWithRelease": 27602,
 	"name": "landscape animated",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -11,7 +11,7 @@
 			"id": "Sprite",
 			"name": "Sprite",
 			"author": "Scirra",
-			"version": "r268",
+			"version": "r276.2",
 			"bundled": false
 		},
 		{
@@ -19,7 +19,15 @@
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
-			"version": "r268",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r276.2",
 			"bundled": false
 		},
 		{
@@ -27,7 +35,7 @@
 			"id": "MoveTo",
 			"name": "Move To",
 			"author": "Scirra",
-			"version": "r268",
+			"version": "r276.2",
 			"bundled": false
 		},
 		{
@@ -35,23 +43,7 @@
 			"id": "Orbit",
 			"name": "Orbit",
 			"author": "Scirra",
-			"version": "r268",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "solid",
-			"name": "Solid",
-			"author": "Scirra",
-			"version": "r268",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
-			"id": "jumpthru",
-			"name": "Jump-thru",
-			"author": "Scirra",
-			"version": "r268",
+			"version": "r276.2",
 			"bundled": false
 		},
 		{
@@ -59,7 +51,23 @@
 			"id": "Platform",
 			"name": "Platform",
 			"author": "Scirra",
-			"version": "r268",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r276.2",
 			"bundled": false
 		}
 	],
@@ -69,12 +77,13 @@
 			"Universe",
 			"Sun",
 			"Stroke",
-			"Platform",
 			"MainCharacter",
 			"Keyboard",
 			"Death",
 			"AI",
-			"AI_Boundaries"
+			"Platform",
+			"Gate",
+			"YouWon"
 		],
 		"subfolders": []
 	},
@@ -88,13 +97,15 @@
 	},
 	"layouts": {
 		"items": [
-			"Layout 1"
+			"Layout 1",
+			"Layout 2"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1"
+			"Event sheet 1",
+			"Event sheet 2"
 		],
 		"subfolders": []
 	},
@@ -228,6 +239,7 @@
 			0
 		],
 		"orientations": "landscape",
+		"webgpu": "auto",
 		"gpuPreference": "high-performance",
 		"scriptsType": "module",
 		"framerateMode": "vsync",
