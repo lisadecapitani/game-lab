@@ -1,0 +1,81 @@
+{
+	"name": "Enemy",
+	"plugin-id": "Sprite",
+	"sid": 422121627617517,
+	"isGlobal": false,
+	"instanceVariables": [
+		{
+			"name": "Variable1",
+			"type": "string",
+			"desc": "",
+			"sid": 405363303316657
+		},
+		{
+			"name": "RandomValue",
+			"type": "number",
+			"desc": "",
+			"sid": 758553498670144
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 307894079074918
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 594951198038271
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 815,
+						"height": 371,
+						"originX": 0.40245398773006136,
+						"originY": 0.5283018867924528,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 9558781,
+						"collisionPoly": {
+							"points": [
+								0.013496932515337423,
+								0.2776280323450135,
+								0.44785276073619634,
+								0.0862533692722372,
+								0.943558282208589,
+								0.14016172506738545,
+								0.6478527607361964,
+								0.9164420485175202,
+								0.6257668711656442,
+								0.9919137466307277,
+								0.44785276073619634,
+								0.9137466307277629,
+								0.3042944785276074,
+								0.9137466307277629,
+								0.6220858895705521,
+								0.9164420485175202
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 201598301618353,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

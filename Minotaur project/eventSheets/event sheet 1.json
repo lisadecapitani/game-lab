@@ -1,0 +1,823 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "COLORS",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Blue",
+							"sid": 553246052361527,
+							"parameters": {
+								"object": "Main_Character"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 720907416240708,
+							"parameters": {
+								"time-scale": "0.5"
+							}
+						}
+					],
+					"sid": 900130242709905
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Green",
+							"sid": 801116379064310,
+							"parameters": {
+								"object": "Main_Character"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 969717530036419,
+							"parameters": {
+								"time-scale": "2"
+							}
+						}
+					],
+					"sid": 451135982901464
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Pink",
+							"sid": 209691642980421,
+							"parameters": {
+								"object": "Main_Character"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 599900307907280,
+							"parameters": {
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 922559368978434
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Yellow",
+							"sid": 936060248093813,
+							"parameters": {
+								"object": "Main_Character"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 945040696081181,
+							"parameters": {
+								"time-scale": "5"
+							}
+						}
+					],
+					"sid": 150526686975396
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Orange",
+							"sid": 938017742076344,
+							"parameters": {
+								"object": "Main_Character"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 273681589449166,
+							"parameters": {
+								"time-scale": "0.2"
+							}
+						}
+					],
+					"sid": 237389722859949
+				}
+			],
+			"sid": 173260576386812
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "WALLS AND MAIN CHARACTER",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Walls",
+							"sid": 872182769959060,
+							"parameters": {
+								"object": "Main_Character"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Main_Character",
+							"sid": 187343295523747
+						}
+					],
+					"sid": 338117984904235
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "Main_Character",
+							"sid": 833792316318482
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Main_Character",
+							"sid": 300785589765534,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 918948601693005
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 308224899145575
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Main_Character",
+							"sid": 551488640289449
+						}
+					],
+					"sid": 379132235632968
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Main_Character",
+							"sid": 391636757115458
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 328435716357288,
+							"parameters": {
+								"object-to-create": "Main_Character",
+								"layer": "2",
+								"x": "91.863664",
+								"y": "170.323908",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 116548660535448
+				}
+			],
+			"sid": 251473648659855
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CONTROLS ENEMY",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 212416700572199,
+							"parameters": {
+								"object": "Enemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 399584297753949,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 943463128543909,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"comparison": 0,
+										"value": "\"n\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Enemy",
+									"sid": 472500422799993,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								}
+							],
+							"sid": 205568006688282
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 589638216294493
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 123944321931176,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"comparison": 0,
+										"value": "\"s\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Enemy",
+									"sid": 983986102673520,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								}
+							],
+							"sid": 784131339507926
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 742409623269829
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 364025994662751,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"comparison": 0,
+										"value": "\"w\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Enemy",
+									"sid": 598976322247599,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 555862566862858
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 689891020580790
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 978796258497398,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"comparison": 0,
+										"value": "\"e\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Enemy",
+									"sid": 419034765043544,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 605232107762095
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 849121083433473,
+							"parameters": {
+								"interval-seconds": "3.5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 640330616018693,
+							"parameters": {
+								"instance-variable": "RandomValue",
+								"value": "int(random(4))"
+							}
+						}
+					],
+					"sid": 500037331396098,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 760029116118668,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 706929111474930,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"value": "\"s\""
+									}
+								}
+							],
+							"sid": 870721564826789
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 200505951326960
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 180374621545034,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 510528048823439,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"value": "\"w\""
+									}
+								}
+							],
+							"sid": 965353959740984
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 595332031067622
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 819347120760910,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 162506958559559,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"value": "\"e\""
+									}
+								}
+							],
+							"sid": 111670142149128
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 939439570528073
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 962585691292547,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 412173601538853,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"value": "\"n\""
+									}
+								}
+							],
+							"sid": 811161981380974
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy",
+							"sid": 195965853903183,
+							"parameters": {
+								"object": "Walls"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 248330296682908,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 254519064567900,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"comparison": 0,
+										"value": "\"n\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 715333993918877,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"value": "\"s\""
+									}
+								}
+							],
+							"sid": 182901361502488
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 336082525168382
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 126778097951309,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"comparison": 0,
+										"value": "\"s\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 961585223255041,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"value": "\"w\""
+									}
+								}
+							],
+							"sid": 644019144525610
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 292747990045198
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 673208792096869,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"comparison": 0,
+										"value": "\"w\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 653282472686755,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"value": "\"e\""
+									}
+								}
+							],
+							"sid": 393110685591612
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 464858952178227
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 499669738321453,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"comparison": 0,
+										"value": "\"e\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 702494215979109,
+									"parameters": {
+										"instance-variable": "Variable1",
+										"value": "\"n\""
+									}
+								}
+							],
+							"sid": 804060291885220
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-screen",
+							"objectClass": "Enemy",
+							"sid": 707844776620076
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Enemy",
+							"sid": 633260313498837,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 302548657333985
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 683203958068892
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemy",
+							"sid": 985812944092787
+						}
+					],
+					"sid": 793373679808233
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 249862960048034
+						}
+					],
+					"actions": [
+						{
+							"id": "find-path",
+							"objectClass": "Enemy",
+							"sid": 368099081588341,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "Main_Character.X",
+								"y": "Main_Character.Y"
+							}
+						}
+					],
+					"sid": 787305324492466
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-arrived",
+							"objectClass": "Enemy",
+							"sid": 386222915870917,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"actions": [
+						{
+							"id": "find-path",
+							"objectClass": "Enemy",
+							"sid": 149894891077134,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "Main_Character.X",
+								"y": "Main_Character.Y"
+							}
+						}
+					],
+					"sid": 659324483152363
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-path-found",
+							"objectClass": "Enemy",
+							"sid": 941466071834287,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"actions": [
+						{
+							"id": "move-along-path",
+							"objectClass": "Enemy",
+							"sid": 788232783991680,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 248134198942201
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Enemy",
+							"sid": 927732400147147
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 780215206370455,
+							"parameters": {
+								"object-to-create": "Enemy",
+								"layer": "2",
+								"x": "625",
+								"y": "867",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 802312833479295
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Enemy",
+							"sid": 529310642854489,
+							"parameters": {
+								"object": "Main_Character"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Main_Character",
+							"sid": 819918096152727
+						}
+					],
+					"sid": 124884779752614
+				}
+			],
+			"sid": 726301744813223
+		}
+	],
+	"sid": 692309435524133
+}
