@@ -1,0 +1,16 @@
+{
+	"name": "Fade",
+	"plugin-id": "Sprite",
+	"sid": 411059435317509,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Universe",
+		"Sun",
+		"Stroke",
+		"MainCharacter",
+		"Death",
+		"AI"
+	]
+}
