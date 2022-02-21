@@ -23,6 +23,14 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
@@ -58,7 +66,9 @@
 			"Walls",
 			"Main_Character",
 			"Enemy",
-			"Keyboard"
+			"Keyboard",
+			"Audio",
+			"SoundIcon"
 		],
 		"subfolders": []
 	},
@@ -86,7 +96,18 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "sound (1).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 354303553167470
+				},
+				{
+					"name": "sound (2).webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 708751020431615
+				}
+			],
 			"subfolders": []
 		},
 		"music": {

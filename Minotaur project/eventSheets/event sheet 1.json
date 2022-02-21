@@ -237,296 +237,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 212416700572199,
-							"parameters": {
-								"object": "Enemy"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 399584297753949,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 943463128543909,
-									"parameters": {
-										"instance-variable": "Variable1",
-										"comparison": 0,
-										"value": "\"n\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "Enemy",
-									"sid": 472500422799993,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "up"
-									}
-								}
-							],
-							"sid": 205568006688282
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 589638216294493
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 123944321931176,
-									"parameters": {
-										"instance-variable": "Variable1",
-										"comparison": 0,
-										"value": "\"s\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "Enemy",
-									"sid": 983986102673520,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "down"
-									}
-								}
-							],
-							"sid": 784131339507926
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 742409623269829
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 364025994662751,
-									"parameters": {
-										"instance-variable": "Variable1",
-										"comparison": 0,
-										"value": "\"w\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "Enemy",
-									"sid": 598976322247599,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "left"
-									}
-								}
-							],
-							"sid": 555862566862858
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 689891020580790
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 978796258497398,
-									"parameters": {
-										"instance-variable": "Variable1",
-										"comparison": 0,
-										"value": "\"e\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "Enemy",
-									"sid": 419034765043544,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "right"
-									}
-								}
-							],
-							"sid": 605232107762095
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 849121083433473,
-							"parameters": {
-								"interval-seconds": "3.5"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 640330616018693,
-							"parameters": {
-								"instance-variable": "RandomValue",
-								"value": "int(random(4))"
-							}
-						}
-					],
-					"sid": 500037331396098,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 760029116118668,
-									"parameters": {
-										"instance-variable": "RandomValue",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Enemy",
-									"sid": 706929111474930,
-									"parameters": {
-										"instance-variable": "Variable1",
-										"value": "\"s\""
-									}
-								}
-							],
-							"sid": 870721564826789
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 200505951326960
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 180374621545034,
-									"parameters": {
-										"instance-variable": "RandomValue",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Enemy",
-									"sid": 510528048823439,
-									"parameters": {
-										"instance-variable": "Variable1",
-										"value": "\"w\""
-									}
-								}
-							],
-							"sid": 965353959740984
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 595332031067622
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 819347120760910,
-									"parameters": {
-										"instance-variable": "RandomValue",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Enemy",
-									"sid": 162506958559559,
-									"parameters": {
-										"instance-variable": "Variable1",
-										"value": "\"e\""
-									}
-								}
-							],
-							"sid": 111670142149128
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 939439570528073
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
-									"sid": 962585691292547,
-									"parameters": {
-										"instance-variable": "RandomValue",
-										"comparison": 0,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Enemy",
-									"sid": 412173601538853,
-									"parameters": {
-										"instance-variable": "Variable1",
-										"value": "\"n\""
-									}
-								}
-							],
-							"sid": 811161981380974
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "Enemy",
 							"sid": 195965853903183,
@@ -811,12 +521,32 @@
 							"id": "destroy",
 							"objectClass": "Main_Character",
 							"sid": 819918096152727
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 942010138828289,
+							"parameters": {
+								"audio-file": "sound (1)",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 124884779752614
 				}
 			],
 			"sid": 726301744813223
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Sounds",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 730412769085801
 		}
 	],
 	"sid": 692309435524133
