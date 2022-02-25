@@ -1,0 +1,57 @@
+{
+	"name": "YouWon_2",
+	"plugin-id": "Sprite",
+	"sid": 681299810988536,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 2788,
+						"height": 1825,
+						"originX": 0.505738880918221,
+						"originY": 0.48547945205479454,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 1167779,
+						"collisionPoly": {
+							"points": [
+								0.07065997130559541,
+								0.2810958904109589,
+								0.505738880918221,
+								0.03780821917808219,
+								0.9946197991391679,
+								0.19835616438356166,
+								0.9325681492109039,
+								0.48547945205479454,
+								0.8543758967001435,
+								0.5578082191780822,
+								0.505738880918221,
+								0.6975342465753425,
+								0.3450502152080344,
+								0.27013698630136984,
+								0.26040172166427544,
+								0.48547945205479454
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 234118535401737,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

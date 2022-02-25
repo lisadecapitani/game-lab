@@ -3,12 +3,40 @@
 	"plugin-id": "Sprite",
 	"sid": 414766097009397,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "Direction",
+			"type": "string",
+			"desc": "",
+			"sid": 839495185368485
+		},
+		{
+			"name": "RandomValue",
+			"type": "number",
+			"desc": "",
+			"sid": 397691352402137
+		}
+	],
 	"behaviorTypes": [
 		{
-			"behaviorId": "Physics",
-			"name": "Physics",
-			"sid": 554405814774303
+			"behaviorId": "Pathfinding",
+			"name": "Pathfinding",
+			"sid": 946193486013609
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "LineOfSight",
+			"sid": 122269828810732
+		},
+		{
+			"behaviorId": "EightDir",
+			"name": "8Direction",
+			"sid": 217635069600841
+		},
+		{
+			"behaviorId": "solid",
+			"name": "Solid",
+			"sid": 385158969682277
 		}
 	],
 	"effectTypes": [],
@@ -41,8 +69,8 @@
 								0.9677966101694915,
 								0.15280135823429541,
 								0.8457627118644068,
-								0.001697792869269949,
-								0.5
+								0,
+								0.4938222319718792
 							]
 						},
 						"useCollisionPoly": true,
@@ -50,7 +78,7 @@
 					}
 				],
 				"sid": 676660769772389,
-				"name": "idle",
+				"name": "Idle",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -221,7 +249,7 @@
 					}
 				],
 				"sid": 359460675014719,
-				"name": "land",
+				"name": "Land",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -360,7 +388,7 @@
 					}
 				],
 				"sid": 595916205025922,
-				"name": "jump",
+				"name": "Jump",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -499,7 +527,7 @@
 					}
 				],
 				"sid": 674063300763187,
-				"name": "fall",
+				"name": "Fall",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

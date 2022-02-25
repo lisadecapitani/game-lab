@@ -1,0 +1,84 @@
+{
+	"name": "Stars",
+	"plugin-id": "Sprite",
+	"sid": 155744635219804,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 56,
+						"height": 107,
+						"originX": 23.428571428571427,
+						"originY": -1.6635514018691588,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 564987,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 104,
+						"height": 216,
+						"originX": 12.836538461538462,
+						"originY": -0.5416666666666666,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 2816081,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 789127163057820,
+				"name": "Orange",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 53,
+						"height": 63,
+						"originX": 0.49056603773584906,
+						"originY": 0.49206349206349204,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 5309785,
+						"useCollisionPoly": true,
+						"duration": 1
+					},
+					{
+						"width": 99,
+						"height": 132,
+						"originX": 0.5454545454545454,
+						"originY": 0.5227272727272727,
+						"originalSource": "",
+						"exportFormat": "png",
+						"exportQuality": 0.8,
+						"imageSpriteId": 890084,
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 637425264941121,
+				"name": "Purple",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

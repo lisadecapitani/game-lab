@@ -1,47 +1,49 @@
 {
-	"name": "Gate",
+	"name": "Bkg",
 	"plugin-id": "Sprite",
-	"sid": 747095765108434,
+	"sid": 519508105321659,
 	"isGlobal": false,
 	"instanceVariables": [],
-	"behaviorTypes": [
-		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 727782825166638
-		}
-	],
+	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
 		"items": [
 			{
 				"frames": [
 					{
-						"width": 628,
-						"height": 734,
-						"originX": 0.6528662420382165,
-						"originY": 0.5762942779291553,
+						"width": 3840,
+						"height": 2160,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "png",
 						"exportQuality": 0.8,
-						"imageSpriteId": 815059,
+						"imageSpriteId": 9395479,
 						"collisionPoly": {
 							"points": [
-								0.9451033476811299,
 								0,
-								0.9519552242983681,
-								1,
-								0.3874884927348728,
-								1,
-								0.37411246330115494,
-								0
+								0,
+								0.5,
+								0,
+								0.9997395833333333,
+								0,
+								0.9997395833333333,
+								0.5,
+								0.9997395833333333,
+								0.999537037037037,
+								0.5,
+								0.999537037037037,
+								0,
+								0.999537037037037,
+								0,
+								0.5
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1
 					}
 				],
-				"sid": 357226126867545,
+				"sid": 455490684859635,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

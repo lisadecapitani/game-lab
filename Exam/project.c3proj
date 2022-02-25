@@ -23,14 +23,6 @@
 			"bundled": false
 		},
 		{
-			"type": "plugin",
-			"id": "Text",
-			"name": "Text",
-			"author": "Scirra",
-			"version": "r276.2",
-			"bundled": false
-		},
-		{
 			"type": "behavior",
 			"id": "MoveTo",
 			"name": "Move To",
@@ -56,8 +48,24 @@
 		},
 		{
 			"type": "behavior",
-			"id": "Physics",
-			"name": "Physics",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pathfinding",
+			"name": "Pathfinding",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "LOS",
+			"name": "Line of sight",
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
@@ -66,6 +74,14 @@
 			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
+			"author": "Scirra",
+			"version": "r276.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
 			"author": "Scirra",
 			"version": "r276.2",
 			"bundled": false
@@ -83,7 +99,12 @@
 			"AI",
 			"Platform",
 			"Gate",
-			"YouWon"
+			"Lock",
+			"Walls",
+			"YouWon_2",
+			"Invisible_Wall",
+			"Bkg",
+			"Stars"
 		],
 		"subfolders": []
 	},
@@ -91,21 +112,25 @@
 	"containers": [],
 	"families": {
 		"items": [
-			"Fade"
+			"Fade",
+			"Character"
 		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
-			"Layout 1",
-			"Layout 2"
+			"Platform",
+			"You_won!",
+			"Top-down",
+			"Platform_2"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Event sheet 1",
-			"Event sheet 2"
+			"Platform",
+			"Top-down",
+			"Platform2"
 		],
 		"subfolders": []
 	},

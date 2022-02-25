@@ -1,0 +1,311 @@
+{
+	"name": "Platform",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "STROKES",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 633812187973538
+						}
+					],
+					"actions": [
+						{
+							"id": "set-radius",
+							"objectClass": "Stroke",
+							"sid": 955105970603416,
+							"behaviorType": "Orbit",
+							"parameters": {
+								"primary": "Stroke.Orbit.PrimaryRadius - 3",
+								"secondary": "Stroke.Orbit.SecondaryRadius - 3"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Stroke",
+							"sid": 247897751244344,
+							"parameters": {
+								"scale": "Stroke.Orbit.PrimaryRadius / 1500"
+							}
+						}
+					],
+					"sid": 116910023593576
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 396344261617252,
+							"parameters": {
+								"object": "Stroke"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 966958141620261,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 977800962611340,
+									"parameters": {
+										"first-value": "Stroke.Orbit.PrimaryRadius",
+										"comparison": 2,
+										"second-value": "50"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-radius",
+									"objectClass": "Stroke",
+									"sid": 257084641766245,
+									"behaviorType": "Orbit",
+									"parameters": {
+										"primary": "3000",
+										"secondary": "3000"
+									}
+								}
+							],
+							"sid": 236946572764357
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-layer",
+							"objectClass": "Stroke",
+							"sid": 616133534724648,
+							"parameters": {
+								"layer": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-collisions-enabled",
+							"objectClass": "Stroke",
+							"sid": 429744200584974,
+							"parameters": {
+								"collisions": "disabled"
+							}
+						}
+					],
+					"sid": 198378346914788
+				}
+			],
+			"sid": 711932804692911
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MAIN CHARACTER AND KEY",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 699805945706648,
+							"parameters": {
+								"key": 37
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "MainCharacter",
+							"sid": 419928521404496,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 191937270744902
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 736412276086048,
+							"parameters": {
+								"key": 39
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-mirrored",
+							"objectClass": "MainCharacter",
+							"sid": 637419027808754,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 485562278878972
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "MainCharacter",
+							"sid": 412721086229973,
+							"parameters": {
+								"object": "Stroke"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "MainCharacter",
+							"sid": 961515492335570
+						}
+					],
+					"sid": 465604242686467
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "MainCharacter",
+							"sid": 388875495151841
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 246953620957381,
+							"parameters": {
+								"object-to-create": "MainCharacter",
+								"layer": "0",
+								"x": "393",
+								"y": "271",
+								"create-hierarchy": false
+							}
+						}
+					],
+					"sid": 447937906979466
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Sun",
+							"sid": 679353116054322,
+							"parameters": {
+								"object": "MainCharacter"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 480980842921868,
+							"parameters": {
+								"layout": "You_won!"
+							}
+						}
+					],
+					"sid": 665146381132732
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Death",
+							"sid": 339670208669264,
+							"parameters": {
+								"object": "MainCharacter"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "MainCharacter",
+							"sid": 904707036141449
+						}
+					],
+					"sid": 622652997816424
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "MainCharacter",
+							"sid": 447102445278109,
+							"parameters": {
+								"object": "Lock"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 698054805807019,
+							"parameters": {
+								"layout": "Top-down"
+							}
+						}
+					],
+					"sid": 785870243356314
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 646488601899984
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "MainCharacter",
+							"sid": 842070861297641,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 267066937839399
+				}
+			],
+			"sid": 958460961683927
+		}
+	],
+	"sid": 677795246774711
+}

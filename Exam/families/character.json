@@ -1,0 +1,12 @@
+{
+	"name": "Character",
+	"plugin-id": "Sprite",
+	"sid": 886470360639844,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"AI",
+		"MainCharacter"
+	]
+}

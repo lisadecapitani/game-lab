@@ -1,0 +1,650 @@
+{
+	"name": "Top-down",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MainCharacter and Key",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 558696819885685
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "MainCharacter",
+							"sid": 608392074005629,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 672948826308638
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "MainCharacter",
+							"sid": 395553264831167,
+							"parameters": {
+								"object": "AI"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-child",
+							"objectClass": "MainCharacter",
+							"sid": 370127620639660,
+							"disabled": true,
+							"parameters": {
+								"child": "AI",
+								"transform-x": true,
+								"transform-y": true,
+								"transform-w": true,
+								"transform-h": true,
+								"transform-a": true,
+								"transform-z-elevation": true,
+								"destroy-with-parent": false
+							}
+						},
+						{
+							"id": "clear-obstacles",
+							"objectClass": "AI",
+							"sid": 139985120283388,
+							"disabled": true,
+							"behaviorType": "LineOfSight"
+						},
+						{
+							"id": "set-ignoring-input",
+							"objectClass": "AI",
+							"sid": 378728167840323,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"input": "start-ignoring"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "AI",
+							"sid": 949355664898490,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"set": "disabled"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "AI",
+							"sid": 898924752785301
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "MainCharacter",
+							"sid": 743225776552640,
+							"parameters": {
+								"animation": "\"Key_MainCharacter\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Lock",
+							"sid": 932122828392780,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 250294480776628,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-parent",
+									"objectClass": "AI",
+									"sid": 596987600165476
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "AI",
+									"sid": 315376853789931,
+									"parameters": {
+										"x": "MainCharacter.X+300",
+										"y": "MainCharacter.Y+60"
+									}
+								}
+							],
+							"sid": 237475549962692,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "MainCharacter",
+							"sid": 112882680903210,
+							"parameters": {
+								"object": "Lock"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 101820860778989,
+							"parameters": {
+								"layout": "Platform_2"
+							}
+						}
+					],
+					"sid": 727341671215036
+				}
+			],
+			"sid": 692910476648731
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Pathfind Key",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "AI",
+							"sid": 116229745528388,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"right\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "AI",
+							"sid": 339359233908180,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "right"
+							}
+						}
+					],
+					"sid": 890053952218237
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "AI",
+							"sid": 808427665560434,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"left\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "AI",
+							"sid": 740591368700680,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "left"
+							}
+						}
+					],
+					"sid": 803083440357362
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "AI",
+							"sid": 313195721427865,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"up\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "AI",
+							"sid": 937315689325844,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "up"
+							}
+						}
+					],
+					"sid": 525064288321892
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "AI",
+							"sid": 324267207732528,
+							"parameters": {
+								"instance-variable": "Direction",
+								"comparison": 0,
+								"value": "\"down\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "AI",
+							"sid": 221370754446216,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"control": "down"
+							}
+						}
+					],
+					"sid": 224487991271390
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 816104204607830,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "AI",
+							"sid": 153337474208733,
+							"parameters": {
+								"instance-variable": "RandomValue",
+								"value": "floor(random(4))"
+							}
+						}
+					],
+					"sid": 886430176976331,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 613623948108340,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 940570175238938,
+									"parameters": {
+										"instance-variable": "Direction",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 671982254232700
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 226374869214390,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 712919146445569,
+									"parameters": {
+										"instance-variable": "Direction",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 440808061160958
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 790758788501395,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 947266859078257,
+									"parameters": {
+										"instance-variable": "Direction",
+										"value": "\"down\""
+									}
+								}
+							],
+							"sid": 678878828285327
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 608101316736474,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 471337495205990,
+									"parameters": {
+										"instance-variable": "Direction",
+										"value": "\"up\""
+									}
+								}
+							],
+							"sid": 284232029276465
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 638695910765666,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 984067475126793,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 760008666789038,
+									"parameters": {
+										"instance-variable": "Direction",
+										"value": "\"right\""
+									}
+								}
+							],
+							"sid": 612743385814951
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 695282100383321,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 854154687302314,
+									"parameters": {
+										"instance-variable": "Direction",
+										"value": "\"down\""
+									}
+								}
+							],
+							"sid": 451828618966667
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 962179591365235,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 108803973666379,
+									"parameters": {
+										"instance-variable": "Direction",
+										"value": "\"up\""
+									}
+								}
+							],
+							"sid": 605141137061239
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "AI",
+									"sid": 971989342241684,
+									"parameters": {
+										"instance-variable": "RandomValue",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "AI",
+									"sid": 998640007215006,
+									"parameters": {
+										"instance-variable": "Direction",
+										"value": "\"left\""
+									}
+								}
+							],
+							"sid": 187537031617371
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 839306532312930
+						}
+					],
+					"actions": [
+						{
+							"id": "add-obstacle",
+							"objectClass": "AI",
+							"sid": 962228427220461,
+							"disabled": true,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"obstacle": "MainCharacter"
+							}
+						},
+						{
+							"id": "set-range",
+							"objectClass": "AI",
+							"sid": 951731448743496,
+							"disabled": true,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"range": "800"
+							}
+						}
+					],
+					"sid": 227836258084776
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-los-to-object",
+							"objectClass": "AI",
+							"sid": 624350720488357,
+							"behaviorType": "LineOfSight",
+							"parameters": {
+								"object": "MainCharacter",
+								"image-point": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "find-path",
+							"objectClass": "AI",
+							"sid": 367445627766266,
+							"behaviorType": "Pathfinding",
+							"parameters": {
+								"x": "243",
+								"y": "1585"
+							}
+						}
+					],
+					"sid": 569307710983159
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-arrived",
+							"objectClass": "AI",
+							"sid": 393184761783852,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"actions": [
+						{
+							"id": "move-along-path",
+							"objectClass": "AI",
+							"sid": 341800061275811,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 319112427065244
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Walls",
+							"sid": 729455341081963,
+							"parameters": {
+								"object": "MainCharacter"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "MainCharacter",
+							"sid": 869297609119775,
+							"parameters": {
+								"x": "2946",
+								"y": "987"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "MainCharacter",
+							"sid": 421104025838545,
+							"parameters": {
+								"animation": "\"Key_MainCharacter\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 997547707592220
+				}
+			],
+			"sid": 892569000589895
+		}
+	],
+	"sid": 737944105588838
+}
